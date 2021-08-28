@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define fast ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+
+void solve(){
+    int a,b,c;
+    vector<int> arr(3);
+    cin>>arr[0]>>arr[1]>>arr[2];
+    sort(arr.begin(),arr.end());
+    a=arr[0];
+    b=arr[1];
+    c=arr[2];
+    int y=min(b-a,c-b);
+    if(b-a == c-b) // if 3 numbers are already consecutive.
+        cout<<0;
+    else if(y==2) // if there is a gap of 2 between any we can directly move the other number between them.
+        cout<<1;
+    else
+        cout<<2;
+    cout<<endl;    
+    int z= max(b-a,c-b);
+    cout<<z-1;        
+}
+signed main(){
+    fast;
+    freopen("herding.in","r",stdin);
+    freopen("herding.out","w",stdout);
+    int t=1;
+    while(t--){
+    solve();
+    }
+    return 0;
+}
